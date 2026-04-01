@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
-    --teal-01: hsl(204, 43%, 93%);
-    --teal-02: hsl(179, 62%, 43%);
-    --green-01: hsl(71, 73%, 54%);
-    --gray-01: hsl(218, 22%, 67%);
+    --teal-01: #e5eff5;
+    --teal-02: #2ab2af;
+    --teal-03: #4ABEBD;
+    --teal-04: #c3f8f8;
+    --teal-05: #64D6D4;
+    --green-01: #c0df34;
+    --gray-01: #98a6bd;
 
     --font-primary: 'Karla';
 
@@ -20,4 +23,132 @@ body {
     min-height: 100vh;
     font-family: var(--font-primary), Arial, Helvetica, sans-serif;
     font-size: 1rem;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--teal-01);
+}
+
+.content {
+    display: grid;
+    grid-template-areas: 
+    "primary primary"
+    "secondary tertiary"
+    ;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 770px;
+    height: 100%;
+    max-height: 570px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #FFF;
+    box-shadow: -1px 5px 30px 5px rgba(0, 0, 0, 0.068);
+}
+
+.content_primary, .content_secondary, .content_tertiary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.content_primary {
+    grid-area: primary;
+    background-color: #FFF;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.content_primary h1 {
+    color: var(--teal-02);
+}
+
+.content_primary h2 {
+    color: var(--green-01);
+}
+
+.content_primary p {
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--gray-01);
+}
+
+
+.content_secondary {
+    grid-area: secondary;
+    justify-content: space-between;
+    color: #FFF;
+    background: var(--teal-02);
+}
+
+.content_secondary h2{
+    font-size: clamp(1rem, 1vw, 1.3rem);
+}
+
+#secondary_card_dollar {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#secondary_card_dollar h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(1rem, 1vw, 1.3rem);
+    font-weight: 500;
+    color: var(--teal-05);
+}
+
+#secondary_card_dollar h3 span {
+    font-size: clamp(1.3rem, 2vw, 2.3rem);
+    font-weight: 700;
+    color: #FFF;
+}
+
+#secondary_card_dollar p{
+    font-size: clamp(0.8rem, 1vw, 1.1rem);
+    font-weight: 500;
+    color: var(--teal-04);
+}
+
+.button {
+    text-align: center;
+    text-decoration: none;
+    font-size: clamp(0.8rem, 1vw, 1.15rem);
+    font-weight: 700;
+    color: #FFF;
+    background-color: var(--green-01);
+    padding: 5%;
+    border-radius: 7px;
+    box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.068);
+}
+
+.content_tertiary {
+    grid-area: tertiary;
+    background-color: var(--teal-03);
+    justify-content: start;
+    gap: 20px;
+}
+
+.content_tertiary h2 {
+    font-size: clamp(1rem, 1vw, 1.3rem);
+    color: #FFF;
+}
+
+#tertiary_list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    list-style: none;
+    font-size: clamp(0.7rem, 1vw, 1rem);
+    font-weight: 500;
+    color: var(--teal-04);
 }
